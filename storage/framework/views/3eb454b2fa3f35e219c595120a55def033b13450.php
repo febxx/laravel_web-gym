@@ -29,7 +29,7 @@
                                     <td><?php echo e($transaksi->member->name); ?></td>
                                     <td><?php echo e($transaksi->coach->nama); ?></td>
                                     <td><?php echo e($transaksi->paket->nama); ?></td>
-                                    <td><?php echo e($transaksi->paket->harga); ?></td>
+                                    <td>Rp. <?php echo e($transaksi->paket->harga); ?></td>
                                     <td><?php echo e($transaksi->jadwal_mulai); ?></td>
                                     <td><?php echo e($transaksi->jadwal_selesai); ?></td>
                                     <td>

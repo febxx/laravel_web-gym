@@ -31,7 +31,7 @@
                                     <td>{{$transaksi->member->name}}</td>
                                     <td>{{$transaksi->coach->nama}}</td>
                                     <td>{{$transaksi->paket->nama}}</td>
-                                    <td>{{$transaksi->paket->harga}}</td>
+                                    <td>Rp. {{$transaksi->paket->harga}}</td>
                                     <td>{{$transaksi->jadwal_mulai}}</td>
                                     <td>{{$transaksi->jadwal_selesai}}</td>
                                     <td>
