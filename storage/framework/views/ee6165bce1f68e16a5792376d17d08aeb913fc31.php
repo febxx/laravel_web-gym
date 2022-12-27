@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section class="logos-section theme-bg-primary py-5">
     <div class="container" style="border-radius: 20px;">
         <div class="row justify-content-center">
@@ -17,19 +16,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($data as $transaksi)
+                            <?php $__empty_1 = true; $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaksi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                             <tr>
-                                <td>{{$transaksi->coach->nama}}</td>
-                                <td>{{$transaksi->paket->nama}}</td>
-                                <td>Rp. {{$transaksi->paket->harga}}</td>
-                                <td>{{$transaksi->jadwal_mulai}}</td>
-                                <td>{{$transaksi->jadwal_selesai}}</td>
+                                <td><?php echo e($transaksi->coach->nama); ?></td>
+                                <td><?php echo e($transaksi->paket->nama); ?></td>
+                                <td>Rp. <?php echo e($transaksi->paket->harga); ?></td>
+                                <td><?php echo e($transaksi->jadwal_mulai); ?></td>
+                                <td><?php echo e($transaksi->jadwal_selesai); ?></td>
                             </tr>
-                            @empty
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                             <tr>
-                                <td colspan="5" class="text-center">Tidak ada jadwal aktif. <a href="{{url('jadwal/create')}}">Buat jadwal sekarang!</a></td>
+                                <td colspan="5" class="text-center">Tidak ada jadwal aktif. <a href="<?php echo e(url('jadwal/create')); ?>">Buat jadwal sekarang!</a></td>
                             </tr>
-                            @endforelse
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -51,4 +50,6 @@
         }).trigger('change');
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Development\Joki\gym\resources\views/jadwal/riwayat.blade.php ENDPATH**/ ?>

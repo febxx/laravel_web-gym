@@ -17,6 +17,7 @@
                                     <th>Member</th>
                                     <th>Coach</th>
                                     <th>Paket</th>
+                                    <th>Harga</th>
                                     <th>Jadwal Mulai</th>
                                     <th>Jadwal Selesai</th>
                                     <th>Pembayaran</th>
@@ -30,6 +31,7 @@
                                     <td>{{$transaksi->member->name}}</td>
                                     <td>{{$transaksi->coach->nama}}</td>
                                     <td>{{$transaksi->paket->nama}}</td>
+                                    <td>{{$transaksi->paket->harga}}</td>
                                     <td>{{$transaksi->jadwal_mulai}}</td>
                                     <td>{{$transaksi->jadwal_selesai}}</td>
                                     <td>

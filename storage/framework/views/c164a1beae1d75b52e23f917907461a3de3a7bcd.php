@@ -1,8 +1,6 @@
-@extends('layouts.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div id="main">
-    @include('layouts.navbar')
+    <?php echo $__env->make('layouts.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="main-content container-fluid">
         <div class="page-title">
             <h3>Daftar Paket</h3>
@@ -22,19 +20,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($allDataPaket as $key => $paket)
+                                <?php $__currentLoopData = $allDataPaket; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $paket): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td>{{$paket->nama}}</td>
-                                    <td>{{$paket->durasi}} Hari</td>
-                                    <td>Rp. {{$paket->harga}}</td>
+                                    <td><?php echo e($paket->nama); ?></td>
+                                    <td><?php echo e($paket->durasi); ?> Hari</td>
+                                    <td>Rp. <?php echo e($paket->harga); ?></td>
                                     <td>
-                                        <a href="{{route('pakets.edit', $paket->id)}}" class="btn btn-warning"><span
+                                        <a href="<?php echo e(route('pakets.edit', $paket->id)); ?>" class="btn btn-warning"><span
                                                 data-feather="edit"></span></a>
-                                        <a href="{{route('pakets.delete', $paket->id)}}" class="btn btn-danger"><span
+                                        <a href="<?php echo e(route('pakets.delete', $paket->id)); ?>" class="btn btn-danger"><span
                                                 data-feather="x-circle"></span></a>
                                     </td>
                                 </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>
@@ -43,4 +41,6 @@
         </section>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Development\Joki\gym\resources\views/paket/view_paket.blade.php ENDPATH**/ ?>

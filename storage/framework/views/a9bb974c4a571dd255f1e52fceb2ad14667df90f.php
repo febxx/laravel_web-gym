@@ -1,26 +1,25 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section class="logos-section theme-bg-primary py-5">
     <div class="container" style="border-radius: 20px;">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h3 class="text-center">Buat Jadwal</h3>
-                <form method="post" action="{{url('jadwal/store')}}" enctype="multipart/form-data">
-                    @csrf
+                <form method="post" action="<?php echo e(url('jadwal/store')); ?>" enctype="multipart/form-data">
+                    <?php echo csrf_field(); ?>
                     <div class="form-group mb-3">
                         <label class="form-label">Pilih Coach</label>
                         <select class="form-control" name="coach_id">
-                            @foreach($coach as $data)
-                            <option value="{{$data->id}}">{{$data->nama}}</option>
-                            @endforeach
+                            <?php $__currentLoopData = $coach; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($data->id); ?>"><?php echo e($data->nama); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label">Pilih Paket</label>
                         <select class="form-select" name="paket_id">
-                            @foreach($paket as $data)
-                            <option value="{{$data->id}}">{{$data->nama}} ({{$data->durasi}} Hari) - Rp. {{$data->harga}}</option>
-                            @endforeach
+                            <?php $__currentLoopData = $paket; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($data->id); ?>"><?php echo e($data->nama); ?> (<?php echo e($data->durasi); ?> Hari) - Rp. <?php echo e($data->harga); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
                     <div class="form-group mb-3">
@@ -54,4 +53,6 @@
         }).trigger('change');
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Development\Joki\gym\resources\views/jadwal/create.blade.php ENDPATH**/ ?>

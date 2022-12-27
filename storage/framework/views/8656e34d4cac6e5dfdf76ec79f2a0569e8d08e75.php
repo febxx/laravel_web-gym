@@ -10,7 +10,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700|Nunito:400,600,700" rel="stylesheet">
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
+    <link id="theme-style" rel="stylesheet" href="<?php echo e(asset('assets/css/theme.css')); ?>">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div class="alert alert-primary">Tunjukkan ke Pegawai Arista Gym untuk mengaktifkan jadwal.</div>
             <div class="card border-dark">
                 <div class="card-header border-dark d-flex justify-content-start">
-                    <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid" width="30">
+                    <img src="<?php echo e(asset('assets/images/logo.png')); ?>" class="img-fluid" width="30">
                     <p class="mb-0 ms-3 d-flex align-items-center" style="letter-spacing: 1px">
                         INVOICE
                     </p>
@@ -28,35 +28,35 @@
                     <table>
                         <tr>
                             <td>Nama </td>
-                            <td>: {{$data->member->name}}</td>
+                            <td>: <?php echo e($data->member->name); ?></td>
                         </tr>
                         <tr>
                             <td>Coach</td>
-                            <td>: {{$data->coach->nama}}</td>
+                            <td>: <?php echo e($data->coach->nama); ?></td>
                         </tr>
                         <tr>
                             <td>Paket</td>
-                            <td>: {{$data->paket->nama}}</td>
+                            <td>: <?php echo e($data->paket->nama); ?></td>
                         </tr>
                         <tr>
                             <td>Harga</td>
-                            <td>: Rp. {{$data->paket->harga}}</td>
+                            <td>: Rp. <?php echo e($data->paket->harga); ?></td>
                         </tr>
                         <tr>
                             <td>Jadwal Mulai</td>
-                            <td>: {{$data->jadwal_mulai}}</td>
+                            <td>: <?php echo e($data->jadwal_mulai); ?></td>
                         </tr>
                         <tr>
                             <td>Jadwal Selesai</td>
-                            <td>: {{$data->jadwal_selesai}}</td>
+                            <td>: <?php echo e($data->jadwal_selesai); ?></td>
                         </tr>
                         <tr>
                             <td>Pembayaran</td>
-                            <td>: {{($data->pembayaran == 0) ? 'Bayar Di Tempat' : 'Transfer'}}</td>
+                            <td>: <?php echo e(($data->pembayaran == 0) ? 'Bayar Di Tempat' : 'Transfer'); ?></td>
                         </tr>
                         <tr>
                             <td>Status</td>
-                            <td>: {{($data->status == 0) ? 'Belum Aktif' : 'Aktif'}}</td>
+                            <td>: <?php echo e(($data->status == 0) ? 'Belum Aktif' : 'Aktif'); ?></td>
                         </tr>
                     </table>
                 </div>
@@ -68,7 +68,8 @@
     </div>
 
 
-    <script type="text/javascript" src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="<?php echo e(asset('assets/plugins/bootstrap/js/bootstrap.min.js')); ?>"></script>
 </body>
 
 </html>
+<?php /**PATH D:\Development\Joki\gym\resources\views/transaksi/invoice.blade.php ENDPATH**/ ?>

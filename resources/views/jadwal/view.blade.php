@@ -11,6 +11,7 @@
                             <tr>
                                 <th>Coach</th>
                                 <th>Paket</th>
+                                <th>Harga</th>
                                 <th>Jadwal Mulai</th>
                                 <th>Jadwal Selesai</th>
                                 <th>Status</th>
@@ -21,6 +22,7 @@
                             <tr>
                                 <td>{{$data->coach->nama}}</td>
                                 <td>{{$data->paket->nama}}</td>
+                                <td>Rp. {{$data->paket->harga}}</td>
                                 <td>{{$data->jadwal_mulai}}</td>
                                 <td>{{$data->jadwal_selesai}}</td>
                                 <td>
