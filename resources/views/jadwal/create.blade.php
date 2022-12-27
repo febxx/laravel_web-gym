@@ -19,7 +19,7 @@
                         <label class="form-label">Pilih Paket</label>
                         <select class="form-select" name="paket_id">
                             @foreach($paket as $data)
-                            <option value="{{$data->id}}">{{$data->nama}} ({{$data->durasi}} Hari)</option>
+                            <option value="{{$data->id}}">{{$data->nama}} ({{$data->durasi}} Hari) - {{$data->harga}}</option>
                             @endforeach
                         </select>
                     </div>

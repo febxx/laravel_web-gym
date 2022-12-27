@@ -26,7 +26,10 @@ class AuthController extends Controller
 
         $user->save();
 
-        return response()->Json($user, 201);
+        return response()->Json([
+            'user' => $user,
+            'success' => true,
+        ], 201);
     }
 
     public function login(Request $request)
@@ -40,7 +43,7 @@ class AuthController extends Controller
 
         if(!Auth::attempt($login_detail)){
             return response()->json([
-                'error' => 'login gagal. Cek lagi detail login'
+                'success' => false
             ], 401);
 
         }
@@ -52,11 +55,13 @@ class AuthController extends Controller
         $token->save();
 
         return response()->json([
+            'success' => true,
             'access_token' => $tokenResult->accessToken,
             'token_id' => $token->id,
             'user_id' =>$user->id,
             'name' => $user->name,
             'email' => $user->email,
+            'type' => $user->type
         ], 200);
     }
 }

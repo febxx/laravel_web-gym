@@ -49,7 +49,7 @@ class JadwalController extends Controller
 
         $data->save();
 
-        return redirect('/member');
+        return redirect('transaksi/invoice/'.$data->id);
     }
 
     public function JadwalView()

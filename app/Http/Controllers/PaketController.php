@@ -23,11 +23,13 @@ class PaketController extends Controller
         $validatedData=$request->validate([
             'nama' =>'required',
             'durasi' =>'required',
+            'harga' =>'required',
         ]);
 
         $data=new Paket();
         $data->nama=$request->nama;
         $data->durasi=$request->durasi;
+        $data->harga=$request->harga;
         $data->save();
 
         return redirect()->route('paket.view');
@@ -44,11 +46,13 @@ class PaketController extends Controller
         $validatedData=$request->validate([
             'nama' =>'required',
             'durasi' =>'required',
+            'harga' =>'required',
         ]);
 
         $data=Paket::find($id);
         $data->nama=$request->nama;
         $data->durasi=$request->durasi;
+        $data->harga=$request->harga;
         $data->save();
 
         return redirect()->route('paket.view');

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\Auth\PaketController;
 use App\Http\Controllers\API\Auth\CoachController;
+use App\Http\Controllers\API\Auth\JadwalController;
 use App\Http\Controllers\API\Auth\TransaksiController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -13,6 +14,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+
+Route::prefix('jadwal')->group(function(){
+    Route::get('/create', [JadwalController::class, 'JadwalCreate']);
+    Route::post('/store', [JadwalController::class, 'JadwalStore']);
+    route::get('/view/{id}',[JadwalController::class, 'JadwalView']);
+    route::get('/riwayat/{id}',[JadwalController::class, 'JadwalRiwayat']);
+});
 
 Route::prefix('paket')->group(function(){
     route::get('/view',[PaketController::class, 'PaketView']);

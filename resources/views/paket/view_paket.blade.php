@@ -17,6 +17,7 @@
                                 <tr>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Durasi</th>
+                                    <th scope="col">Harga</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -25,6 +26,7 @@
                                 <tr>
                                     <td>{{$paket->nama}}</td>
                                     <td>{{$paket->durasi}} Hari</td>
+                                    <td>{{$paket->harga}}</td>
                                     <td>
                                         <a href="{{route('pakets.edit', $paket->id)}}" class="btn btn-warning"><span
                                                 data-feather="edit"></span></a>

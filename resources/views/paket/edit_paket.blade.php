@@ -18,9 +18,13 @@
                                 data-validation-required-message="This field is required">
                         </div>
                         <div class="mb-3">
-                            <label for="tanggal" class="form-label">Durasi (Hari)</label>
+                            <label class="form-label">Durasi (Hari)</label>
                             <input type="integer" name="durasi" class="form-control" value="{{$editData->durasi}}" required
                                 data-validation-required-message="This field is required">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Harga</label>
+                            <input type="integer" name="harga" class="form-control" value="{{$editData->harga}}" required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

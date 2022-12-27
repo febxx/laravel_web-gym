@@ -12,8 +12,8 @@ class TransaksiController extends Controller
     //
     public function TransaksiView(Request $request)
     {
-        $Transaksi = Transaksi::all();
-        return response()->json($Transaksi, 200);
+        $transaksi = Transaksi::with('member', 'coach', 'paket')->get();
+        return response()->json($transaksi, 200);
     }
 
     public function TransaksiAdd(Request $request)
