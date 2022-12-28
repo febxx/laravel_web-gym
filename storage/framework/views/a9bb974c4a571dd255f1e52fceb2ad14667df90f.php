@@ -1,4 +1,20 @@
 <?php $__env->startSection('content'); ?>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function () {
+        $("#pembayaran").change(function () {
+            if ($("#cod").is(":selected")) {
+                $("#norek").hide();
+                $("#bukti_tf").hide();
+            } else {
+                $("#norek").show();
+                $("#bukti_tf").show();
+            }
+        }).trigger('change');
+    });
+</script>
 <section class="logos-section theme-bg-primary py-5">
     <div class="container" style="border-radius: 20px;">
         <div class="row justify-content-center">
@@ -29,6 +45,11 @@
                             <option value="1" id="tf">Transfer</option>
                         </select>
                     </div>
+                    <div class="alert alert-info" id="norek">
+                        Tujuan Transfer: <br>
+                        No. Rekening 5371965290 <br>
+                        BCA A/N Ariesta Utami
+                    </div>
                     <div class="custom-file mb-3" id="bukti_tf">
                         <label class="form-label">Bukti Transfer</label>
                         <input type="file" name="bukti" class="form-control">
@@ -39,20 +60,6 @@
         </div>
     </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
-<script>
-    $(function () {
-        $("#pembayaran").change(function () {
-            if ($("#cod").is(":selected")) {
-                $("#bukti_tf").hide();
-            } else {
-                $("#bukti_tf").show();
-            }
-        }).trigger('change');
-    });
-</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Development\Joki\gym\resources\views/jadwal/create.blade.php ENDPATH**/ ?>
